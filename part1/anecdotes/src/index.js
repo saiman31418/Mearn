@@ -21,20 +21,20 @@ function Anecdote(){
   )
 
   function Randomanecdote(){
-    var a= Math.floor(Math.random() * 6);
-    setSelected(a) 
+    var x= Math.floor(Math.random() * 6);
+    setSelected(x) 
   }
   function Vote(){
-    const a=[...votes]
-    a[selected]+=1
-    setVotes(a)
+    const x=[...votes]
+    x[selected]+=1
+    setVotes(x)
   }
   function Max(){
-    var a=0;
+    var x=0;
     var index=0
     votes.forEach((value, i) => {
-      if (a < value) {
-        a = value
+      if (x < value) {
+        x = value
         index = i
       }
     })
@@ -43,12 +43,12 @@ function Anecdote(){
   const max=Max();
   return (
     <div>
-      <h1>Annecdote of the day</h1>
+      <h1>Anecdote of the day</h1>
       <p>{anecdotes[selected]}</p><br></br>
       <p> has {votes[selected]}</p>
       <button onClick={Randomanecdote}>next</button>
       <button onClick={Vote}>vote</button>
-      <h1>Annecdote with most votes</h1>
+      <h1>Anecdote with most votes</h1>
       <p>{anecdotes[max]}</p>
       <p>{votes[max]}</p>
     </div>
