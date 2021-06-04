@@ -122,7 +122,7 @@ const deletePerson=(id,name)=>{
 
 
   return (
-    <div>
+    <div class="root">
       <h1>phonebook</h1>
       <Notification message={message} type={type} setMessage={setMessage} setType={setType} />
       <div>
