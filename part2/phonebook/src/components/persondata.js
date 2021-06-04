@@ -5,7 +5,7 @@ const Form =({handlename,handlenumber,addNote,newName,focusName,Phonenumber}) =>
 
     return (
         <div>
-            <h1>add a new contact</h1>
+            <h2>add a new contact</h2>
             <form onSubmit={addNote}>
         <div>
         name:<input

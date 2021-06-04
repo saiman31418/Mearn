@@ -4,6 +4,7 @@ import { useState,useEffect,useRef } from 'react'
 import './index.css';
 import Form from './components/persondata'
 import person from './service/person'
+import Persons from './components/Persons';
 
 const App = () => {
   const [persons, setPersons] = useState([]);
@@ -130,20 +131,13 @@ const deletePerson=(id,name)=>{
       </div>
       <Form  addNote={addNote} newName={newName} handlename={handlename} handlenumber={handlenumber} focusName={focusName} Phonenumber={Phonenumber}></Form>
      
-      <h1>Numbers</h1>
-          
-            {
-                persons.filter((person) => person.name.toLowerCase().includes(searchName.toLowerCase()))
-                .map(person => (
-                    <li key={person.id}>
-                        {person.name} {person.number} &nbsp;
-                        <button onClick={() => deletePerson(person.id, person.name)}>Delete</button>
-                        
-                    </li>
-                ))
-            }
-       
+      <h3>Numbers</h3>
+      <Persons persons={persons} searchName={searchName} deletePerson={deletePerson} />
     </div>
+  
+
+       
+    
   )
 }
 export default App
